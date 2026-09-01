@@ -1,5 +1,5 @@
 // Overflight service worker — cache-first for app shell, network-only for map tiles
-const CACHE = 'overflight-v1';
+const CACHE = 'overflight-v2';
 const SHELL = [
   '/',
   '/index.html',
@@ -7,26 +7,14 @@ const SHELL = [
   '/icon-192.png',
   '/icon-512.png',
   '/apple-touch-icon.png',
-  '/leaflet/leaflet.min.css',
-  '/leaflet/leaflet.min.js',
-  '/leaflet/images/layers.png',
-  '/leaflet/images/layers-2x.png',
-  '/leaflet/images/marker-icon.png',
-  '/leaflet/images/marker-icon-2x.png',
-  '/leaflet/images/marker-shadow.png',
 ];
 
 // Hosts whose tiles must never be cached (opaque responses + in-flight size)
 const TILE_HOSTS = [
   'server.arcgisonline.com',
-  'tile.opentopomap.org',
   'a.tile.opentopomap.org',
   'b.tile.opentopomap.org',
   'c.tile.opentopomap.org',
-  'basemaps.cartocdn.com',
-  'a.basemaps.cartocdn.com',
-  'b.basemaps.cartocdn.com',
-  'c.basemaps.cartocdn.com',
 ];
 
 function isTileRequest(url) {
