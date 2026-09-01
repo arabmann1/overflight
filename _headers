@@ -1,0 +1,33 @@
+# Service worker must never be served from cache — browsers need fresh bytes
+/sw.js
+  Cache-Control: no-cache, no-store, must-revalidate
+
+# Main app — short max-age so content updates are picked up within 5 min
+/
+  Cache-Control: public, max-age=300
+
+/index.html
+  Cache-Control: public, max-age=300
+
+# Manifest — same as app shell
+/manifest.json
+  Cache-Control: public, max-age=300
+
+# Hashed/versioned assets — immutable
+/icon-192.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/icon-512.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/apple-touch-icon.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/leaflet/leaflet.min.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/leaflet/leaflet.min.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/leaflet/images/*
+  Cache-Control: public, max-age=31536000, immutable

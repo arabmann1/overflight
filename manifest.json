@@ -1,0 +1,25 @@
+{
+  "name": "Overflight",
+  "short_name": "Overflight",
+  "description": "Physical-world flight tracking — works offline after first visit.",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#050912",
+  "background_color": "#050912",
+  "start_url": "/",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}
